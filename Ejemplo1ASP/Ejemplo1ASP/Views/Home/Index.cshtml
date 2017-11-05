@@ -1,0 +1,30 @@
+﻿@model List<Ejemplo1ASP.Models.Tareas>
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<h3 class="page-header">
+    Lista de tareas
+    <a class="btn btn-xs btn-primary" href="~/tareas/crear/">Crear Tarea</a>
+</h3>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th style="width:200px;">Nombre</th>
+            <th style="width:200px;">prioridad</th>
+            <th style="width:200px;">Estado</th>
+    </thead>
+    <tbody>
+        @foreach (Ejemplo1ASP.Models.Tareas tarea in Model)
+        {
+            <tr>
+                <td>@(tarea.nombre)</td>
+                <td>@(tarea.Prioridad)</td>
+                <td>@(tarea.Estado)</td>
+            </tr>
+        }
+        </tbody>
+    </table>
